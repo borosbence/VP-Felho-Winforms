@@ -38,7 +38,7 @@ namespace VP_Felho.Presenters
         public void SaveFile()
         {
             var fajl = view.fajl;
-            if (repo.Exists(fajl.id)
+            if (repo.Exists(fajl.id))
             {
                 repo.Update(fajl);
             }

@@ -42,23 +42,24 @@ namespace VP_Felho.Views
             this.label5 = new System.Windows.Forms.Label();
             this.NevTextBox = new System.Windows.Forms.TextBox();
             this.DownloadButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.torlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kijelentkezesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.fajlBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -190,12 +191,24 @@ namespace VP_Felho.Views
             this.DownloadButton.UseVisualStyleBackColor = true;
             this.DownloadButton.Click += new System.EventHandler(this.DownloadButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(145, 151);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(422, 222);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ujToolStripMenuItem,
             this.mentesToolStripMenuItem,
             this.torlesToolStripMenuItem,
+            this.kijelentkezesToolStripMenuItem,
             this.kilepesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -215,19 +228,21 @@ namespace VP_Felho.Views
             this.mentesToolStripMenuItem.Name = "mentesToolStripMenuItem";
             this.mentesToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.mentesToolStripMenuItem.Text = "Mentés";
+            this.mentesToolStripMenuItem.Click += new System.EventHandler(this.mentesToolStripMenuItem_Click);
             // 
             // torlesToolStripMenuItem
             // 
             this.torlesToolStripMenuItem.Name = "torlesToolStripMenuItem";
             this.torlesToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.torlesToolStripMenuItem.Text = "Törlés";
+            this.torlesToolStripMenuItem.Click += new System.EventHandler(this.torlesToolStripMenuItem_Click);
             // 
-            // kilepesToolStripMenuItem
+            // kijelentkezesToolStripMenuItem
             // 
-            this.kilepesToolStripMenuItem.Name = "kilepesToolStripMenuItem";
-            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.kilepesToolStripMenuItem.Text = "Kilépés";
-            this.kilepesToolStripMenuItem.Click += new System.EventHandler(this.kilepesToolStripMenuItem_Click);
+            this.kijelentkezesToolStripMenuItem.Name = "kijelentkezesToolStripMenuItem";
+            this.kijelentkezesToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.kijelentkezesToolStripMenuItem.Text = "Kijelentkezés";
+            this.kijelentkezesToolStripMenuItem.Click += new System.EventHandler(this.KijelentkezesToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -264,14 +279,12 @@ namespace VP_Felho.Views
             // 
             this.openFileDialog1.Title = "Megnyitás";
             // 
-            // pictureBox1
+            // kilepesToolStripMenuItem
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(145, 151);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(422, 222);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.kilepesToolStripMenuItem.Name = "kilepesToolStripMenuItem";
+            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.kilepesToolStripMenuItem.Text = "Kilépés";
+            this.kilepesToolStripMenuItem.Click += new System.EventHandler(this.kilepesToolStripMenuItem_Click);
             // 
             // FajlListaForm
             // 
@@ -290,12 +303,12 @@ namespace VP_Felho.Views
             ((System.ComponentModel.ISupportInitialize)(this.fajlBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,7 +324,7 @@ namespace VP_Felho.Views
         private System.Windows.Forms.ToolStripMenuItem ujToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mentesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem torlesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kilepesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kijelentkezesToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -326,5 +339,6 @@ namespace VP_Felho.Views
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem kilepesToolStripMenuItem;
     }
 }
