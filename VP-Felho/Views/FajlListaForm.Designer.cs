@@ -31,15 +31,16 @@ namespace VP_Felho.Views
         {
             this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.fajlBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UploadButton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.DatumTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NevTextBox = new System.Windows.Forms.TextBox();
             this.DownloadButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,12 +50,15 @@ namespace VP_Felho.Views
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.fajlBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.fajlBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fajlBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -68,6 +72,11 @@ namespace VP_Felho.Views
             this.listBox1.Size = new System.Drawing.Size(200, 426);
             this.listBox1.TabIndex = 0;
             this.listBox1.ValueMember = "id";
+            this.listBox1.SelectedValueChanged += new System.EventHandler(this.listBox1_SelectedValueChanged);
+            // 
+            // fajlBindingSource
+            // 
+            this.fajlBindingSource.DataSource = typeof(VP_Felho.Models.fajl);
             // 
             // tableLayoutPanel1
             // 
@@ -78,14 +87,15 @@ namespace VP_Felho.Views
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel1.Controls.Add(this.UploadButton, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.DatumTextBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.NevTextBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.DownloadButton, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 19);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -105,15 +115,16 @@ namespace VP_Felho.Views
             this.UploadButton.TabIndex = 8;
             this.UploadButton.Text = "Feltöltés";
             this.UploadButton.UseVisualStyleBackColor = true;
+            this.UploadButton.Click += new System.EventHandler(this.UploadButton_Click);
             // 
-            // textBox2
+            // DatumTextBox
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(145, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(422, 20);
-            this.textBox2.TabIndex = 6;
+            this.DatumTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DatumTextBox.Location = new System.Drawing.Point(145, 40);
+            this.DatumTextBox.Name = "DatumTextBox";
+            this.DatumTextBox.ReadOnly = true;
+            this.DatumTextBox.Size = new System.Drawing.Size(422, 20);
+            this.DatumTextBox.TabIndex = 6;
             // 
             // label1
             // 
@@ -160,14 +171,14 @@ namespace VP_Felho.Views
             this.label5.TabIndex = 4;
             this.label5.Text = "Előnézet";
             // 
-            // textBox1
+            // NevTextBox
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(145, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(422, 20);
-            this.textBox1.TabIndex = 5;
+            this.NevTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NevTextBox.Location = new System.Drawing.Point(145, 3);
+            this.NevTextBox.Name = "NevTextBox";
+            this.NevTextBox.ReadOnly = true;
+            this.NevTextBox.Size = new System.Drawing.Size(422, 20);
+            this.NevTextBox.TabIndex = 5;
             // 
             // DownloadButton
             // 
@@ -177,6 +188,7 @@ namespace VP_Felho.Views
             this.DownloadButton.TabIndex = 7;
             this.DownloadButton.Text = "Letöltés";
             this.DownloadButton.UseVisualStyleBackColor = true;
+            this.DownloadButton.Click += new System.EventHandler(this.DownloadButton_Click);
             // 
             // menuStrip1
             // 
@@ -196,6 +208,7 @@ namespace VP_Felho.Views
             this.ujToolStripMenuItem.Name = "ujToolStripMenuItem";
             this.ujToolStripMenuItem.Size = new System.Drawing.Size(30, 20);
             this.ujToolStripMenuItem.Text = "Új";
+            this.ujToolStripMenuItem.Click += new System.EventHandler(this.ujToolStripMenuItem_Click);
             // 
             // mentesToolStripMenuItem
             // 
@@ -247,9 +260,18 @@ namespace VP_Felho.Views
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fájl adatai";
             // 
-            // fajlBindingSource
+            // openFileDialog1
             // 
-            this.fajlBindingSource.DataSource = typeof(VP_Felho.Models.fajl);
+            this.openFileDialog1.Title = "Megnyitás";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(145, 151);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(422, 222);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // FajlListaForm
             // 
@@ -262,8 +284,10 @@ namespace VP_Felho.Views
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FajlListaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VP Felhő";
             this.Load += new System.EventHandler(this.FajlListaForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.fajlBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -271,7 +295,7 @@ namespace VP_Felho.Views
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fajlBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,9 +319,12 @@ namespace VP_Felho.Views
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button UploadButton;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DatumTextBox;
+        private System.Windows.Forms.TextBox NevTextBox;
         private System.Windows.Forms.Button DownloadButton;
         private System.Windows.Forms.BindingSource fajlBindingSource;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

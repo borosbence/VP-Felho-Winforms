@@ -32,7 +32,14 @@ namespace VP_Felho.Views
         public fajl fajl 
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException(); 
+            set
+            {
+                // valami + "." + jpg
+                NevTextBox.Text = string.IsNullOrEmpty(value.fajlnev) ?
+                    null : value.fajlnev + "." + value.kiterjesztes;
+                DatumTextBox.Text = value.datum.Year == 1 ?
+                    null : value.datum.ToString();
+            } 
         }
 
         private void FajlListaForm_Load(object sender, EventArgs e)
@@ -43,6 +50,42 @@ namespace VP_Felho.Views
         private void kilepesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void listBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var fajl = (fajl)listBox1.SelectedItem;
+            if (fajl != null)
+            {
+                presenter.SelectFile(fajl.id);
+            }
+        }
+
+        private void ujToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBox1.ClearSelected();
+            presenter.CreateFile();
+        }
+
+        private void DownloadButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = saveFileDialog1.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                
+            }
+        }
+
+        private void UploadButton_Click(object sender, EventArgs e)
+        {
+            //openFileDialog1.Filter = "Word dokumentumok (*.docx)|*.docx|Minden fájl (*.*)|*.*";
+            openFileDialog1.Filter = "Minden fájl (*.*) | *.*";
+            openFileDialog1.FileName = null;
+            DialogResult dr = openFileDialog1.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                MessageBox.Show(openFileDialog1.FileName);
+            }
         }
     }
 }

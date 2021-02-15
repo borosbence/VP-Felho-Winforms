@@ -118,6 +118,7 @@ namespace VP_Felho.Views
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bejelentkezés";
             ((System.ComponentModel.ISupportInitialize)(this.errorPFelhNev)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorPJelszo)).EndInit();
