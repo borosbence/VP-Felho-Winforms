@@ -30,6 +30,7 @@ namespace VP_Felho.Repositories
         public void Insert(fajl fajl)
         {
             db.fajl.Add(fajl);
+            // XAMPP MySQL Config --> max_allowed_packet=100M
             db.SaveChanges();
         }
 
