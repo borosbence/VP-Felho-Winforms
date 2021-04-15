@@ -7,7 +7,7 @@ using VP_Felho.Models;
 
 namespace VP_Felho.Repositories
 {
-    class FelhasznaloRepository
+    public class FelhasznaloRepository
     {
         private FelhoContext db = new FelhoContext();
         public bool FelhasznaloNevExist(string felhnev)

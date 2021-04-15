@@ -7,7 +7,7 @@ using VP_Felho.Models;
 
 namespace VP_Felho.ViewInterfaces
 {
-    interface IFajlListaView
+    public interface IFajlListaView
     {
         List<fajl> fajlLista { get; set; }
         fajl fajl { get; set; }

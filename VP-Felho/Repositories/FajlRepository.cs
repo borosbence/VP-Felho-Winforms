@@ -29,7 +29,6 @@ namespace VP_Felho.Repositories
 
         public void Insert(fajl fajl)
         {
-            // fajl.felhasznalo_id = CurrentUser.Id;
             db.fajl.Add(fajl);
             db.SaveChanges();
         }

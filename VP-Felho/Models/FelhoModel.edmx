@@ -72,7 +72,7 @@
         </EntityType>
         <Association Name="fajl_ibfk_1">
           <End Role="felhasznalo" Type="Self.felhasznalo" Multiplicity="1" />
-          <End Role="fajl" Type="Self.fajl" Multiplicity="*" />
+          <End Role="fajl" Type="vp_felhoModel.fajl" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="felhasznalo">
               <PropertyRef Name="id" />
@@ -83,7 +83,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="FelhoContext" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="fajl" EntityType="Self.fajl" />
+          <EntitySet Name="fajl" EntityType="vp_felhoModel.fajl" />
           <EntitySet Name="felhasznalo" EntityType="Self.felhasznalo" />
           <AssociationSet Name="fajl_ibfk_1" Association="Self.fajl_ibfk_1">
             <End Role="felhasznalo" EntitySet="felhasznalo" />

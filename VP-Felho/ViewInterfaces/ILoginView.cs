@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VP_Felho.ViewInterfaces
 {
-    interface ILoginView
+    public interface ILoginView
     {
         string felhNev { get; }
         string jelszo { get; }

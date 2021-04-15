@@ -9,14 +9,8 @@ using VP_Felho.ViewInterfaces;
 
 namespace VP_Felho.Presenters
 {
-    class LoginPresenter
+    public class LoginPresenter
     {
-        /*public bool Belepes()
-            Belépés esetén az alábbiakat ellenőrizze:
-            a. Ki van töltve minden mező
-            b. Felhasználó létezik az adatbázisban
-            c. Helyes felhasználónév vagy jelszó */
-
         private ILoginView view;
         private FelhasznaloRepository repo;
         public LoginPresenter(ILoginView param)

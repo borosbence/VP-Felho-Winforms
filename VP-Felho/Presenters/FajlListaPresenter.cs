@@ -10,7 +10,7 @@ using VP_Felho.ViewInterfaces;
 
 namespace VP_Felho.Presenters
 {
-    class FajlListaPresenter
+    public class FajlListaPresenter
     {
         private IFajlListaView view;
         private FajlRepository repo;
