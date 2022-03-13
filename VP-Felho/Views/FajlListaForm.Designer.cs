@@ -48,12 +48,12 @@ namespace VP_Felho.Views
             this.mentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.torlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kijelentkezesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.fajlBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -244,6 +244,13 @@ namespace VP_Felho.Views
             this.kijelentkezesToolStripMenuItem.Text = "Kijelentkezés";
             this.kijelentkezesToolStripMenuItem.Click += new System.EventHandler(this.KijelentkezesToolStripMenuItem_Click);
             // 
+            // kilepesToolStripMenuItem
+            // 
+            this.kilepesToolStripMenuItem.Name = "kilepesToolStripMenuItem";
+            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.kilepesToolStripMenuItem.Text = "Kilépés";
+            this.kilepesToolStripMenuItem.Click += new System.EventHandler(this.kilepesToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -278,13 +285,6 @@ namespace VP_Felho.Views
             // openFileDialog1
             // 
             this.openFileDialog1.Title = "Megnyitás";
-            // 
-            // kilepesToolStripMenuItem
-            // 
-            this.kilepesToolStripMenuItem.Name = "kilepesToolStripMenuItem";
-            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.kilepesToolStripMenuItem.Text = "Kilépés";
-            this.kilepesToolStripMenuItem.Click += new System.EventHandler(this.kilepesToolStripMenuItem_Click);
             // 
             // FajlListaForm
             // 
